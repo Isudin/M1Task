@@ -1,5 +1,5 @@
 ﻿
-public class BillingEntries
+public class BillingEntriesWrapper
 {
     public BillingEntry[] BillingEntries { get; set; }
 }
@@ -36,13 +36,23 @@ public class Value
 
 public class Tax
 {
+    /// <summary>
+    /// Optional tax rate shown as a number in the range 0-100.
+    /// </summary>
     public string Percentage { get; set; }
     public string Annotation { get; set; }
 }
 
 public class Balance
 {
+    /// <summary>
+    /// Monetary amount of the balance calculated for the returned billing entry.
+    /// </summary>
     public string Amount { get; set; }
+
+    /// <summary>
+    /// Three-letter currency code (ISO-4217) of the balance of the returned billing entry.
+    /// </summary>
     public string Currency { get; set; }
 }
 
