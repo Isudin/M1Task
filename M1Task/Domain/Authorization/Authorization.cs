@@ -11,7 +11,7 @@ namespace M1Task.Domain.Authorization
 {
     internal class Authorization
     {
-        private const string BaseAddress = "https://allegro.pl/";
+        private const string BaseAddress = "https://allegro.pl.allegrosandbox.pl/";
         private const string AuthorizationRelativeUri = "auth/oauth/token";
 
         internal static string accessToken = string.Empty;
@@ -40,7 +40,8 @@ namespace M1Task.Domain.Authorization
                 return new Response("Successfully authorized");
             }
 
-            return new Response($"Could not authorize device. Status code: {(int)response.StatusCode} - {response.StatusCode}");
+            return new Response($"Could not authorize device. Status code: {(int)response.StatusCode} - {response.StatusCode}",
+                true);
             //switch (response.StatusCode)
             //{
             //    case HttpStatusCode.OK:

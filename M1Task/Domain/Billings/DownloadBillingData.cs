@@ -24,7 +24,10 @@ namespace M1Task.Domain.Billings
             if (ids.Length == 0)
                 return new Response($"No order has been found in entered IDs range");
 
-            OrderTable[] orders = AllegroContext.Context.Orders.Where(x => x.Id >= ids[0] && x.Id <= ids[1]).ToArray();
+            OrderTable[] orders = AllegroContext.Context.OrderTable.Where(x => x.Id >= ids[0] && x.Id <= ids[1]).ToArray();
+            if (orders.Length == 0)
+                return new Response($"No order has been found in entered IDs range");
+
             List<Response> responses = [];
             foreach (OrderTable order in orders)
                 responses.Add(await DownloadBilling(order.OrderId));

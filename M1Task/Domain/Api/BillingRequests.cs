@@ -22,7 +22,7 @@ internal class BillingRequests(string orderId)
     //    _offset = offset;
     //}
 
-    private const string BaseAddress = "https://apps.developer.allegro.pl.allegrosandbox.pl/";
+    private const string BaseAddress = "https://allegro.pl.allegrosandbox.pl/";
     private const string BillingEntriesRelativeUri = "billing/billing-entries";
     //private readonly string _marketPlaceId = marketPlaceId;
     //private readonly DateTime _occuredAtFrom = occuredAtFrom;
@@ -46,7 +46,7 @@ internal class BillingRequests(string orderId)
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.allegro.public.v1+json"));
 
         string queryParameters = CreateQueryParameters();
-        var response = await client.GetAsync($"{queryParameters}");
+        var response = await client.GetAsync($"?{queryParameters}");
         var content = await response.Content.ReadAsStringAsync();
         switch (response.StatusCode)
         {

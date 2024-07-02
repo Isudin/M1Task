@@ -19,6 +19,11 @@ namespace M1Task.Domain.Billings
 
         internal async Task<Response> DownloadBillingsToDatabase()
         {
+            var auth = new Authorization.Authorization();
+            var response = await auth.Authorize();
+            if (response.IsError)
+                return response;
+
             var billings = await _billingRequests.GetBillingEntries();
             if (billings == null)
                 return new Response(_billingRequests.Error!);
