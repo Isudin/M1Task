@@ -23,7 +23,7 @@ internal class BillingRequests(string orderId)
     //}
 
     private const string BaseAddress = "https://apps.developer.allegro.pl.allegrosandbox.pl/";
-    private const string BillingEntriesRelativeUri = "billing/billing-entries/";
+    private const string BillingEntriesRelativeUri = "billing/billing-entries";
     //private readonly string _marketPlaceId = marketPlaceId;
     //private readonly DateTime _occuredAtFrom = occuredAtFrom;
     //private readonly DateTime _occuredAtTo = occuredAtTo;
