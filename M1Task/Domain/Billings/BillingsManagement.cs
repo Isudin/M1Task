@@ -3,13 +3,8 @@ using M1Task.Domain.ApiConnection.Model;
 using M1Task.Domain.Model;
 using M1Task.Infrastructure;
 using Mapster;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace M1Task.Domain
+namespace M1Task.Domain.Billings
 {
     internal class BillingsManagement
     {
