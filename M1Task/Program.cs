@@ -1,10 +1,13 @@
-﻿using System.Text;
+﻿using M1Task.Domain.Billings;
+using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 string entryString = "ABE - Allegro Billing Entries\n" +
                      "Select action:\n" +
                      $"{ListCommands()}";
 
-while (true)
+var exit = false;
+while (!exit)
 {
     Console.WriteLine(entryString);
     string? input = Console.ReadLine();
@@ -16,19 +19,14 @@ while (true)
         continue;
     }
 
-    break;
+    exit = ExecuteCommands(number);
+
+    Console.WriteLine($"{Environment.NewLine}-----{Environment.NewLine}");
 }
 
 return;
 
 
-
-
-string GetDownloadPrompt()
-{
-    string prompt = "";
-    return prompt;
-}
 
 string ListCommands()
 {
@@ -40,8 +38,27 @@ string ListCommands()
     return sb.ToString();
 }
 
+bool ExecuteCommands(int number)
+{
+    switch (number)
+    {
+        case var _ when number == (int)Commands.DownloadBillingData:
+            var response = DownloadBillingData.DownloadData().GetAwaiter().GetResult();
+            Console.WriteLine(response.Message);
+            break;
+        case var _ when number == (int)Commands.Exit:
+            return true;
+        default:
+            Console.WriteLine("Unknown command");
+            break;
+    }
+
+    return false;
+}
+
 enum Commands
 {
-    DownloadBillingData = 0,
+    Login = 0,
+    DownloadBillingData = 1,
     Exit = 9
 }
