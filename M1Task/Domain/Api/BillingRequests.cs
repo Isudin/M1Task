@@ -42,6 +42,7 @@ internal class BillingRequests(string orderId)
             Timeout = TimeSpan.FromSeconds(10),
             BaseAddress = new Uri(BaseAddress + BillingEntriesRelativeUri)
         };
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Authorization.Authorization.accessToken);
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.allegro.public.v1+json"));
 
         string queryParameters = CreateQueryParameters();
