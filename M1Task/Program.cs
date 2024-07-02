@@ -1,4 +1,6 @@
-﻿using M1Task.Domain.Billings;
+﻿using M1Task.Domain.Authorization;
+using M1Task.Domain.Billings;
+using M1Task.Domain.Model;
 using System.Text;
 
 string entryString = "ABE - Allegro Billing Entries\n" +
@@ -41,10 +43,16 @@ string ListCommands()
 
 bool ExecuteCommands(int number)
 {
+    Response response;
     switch (number)
     {
+        case var _ when number == (int)Commands.Authorize:
+            var authorization = new Authorization();
+            response = authorization.Authorize().GetAwaiter().GetResult();
+            Console.WriteLine(response.Message);
+            break;
         case var _ when number == (int)Commands.DownloadBillingData:
-            var response = DownloadBillingData.DownloadData().GetAwaiter().GetResult();
+            response = DownloadBillingData.DownloadData().GetAwaiter().GetResult();
             Console.WriteLine(response.Message);
             break;
         case var _ when number == (int)Commands.Exit:
@@ -59,7 +67,7 @@ bool ExecuteCommands(int number)
 
 enum Commands
 {
-    Login = 0,
+    Authorize = 0,
     DownloadBillingData = 1,
     Exit = 9
 }
