@@ -2,8 +2,8 @@
 using System.Net.Http.Headers;
 using System.Web;
 using System.Net;
-using M1Task.Model.Errors;
-using M1Task.Model;
+using M1Task.ApiConnection.Model;
+using M1Task.ApiConnection.Model.Errors;
 
 namespace M1Task.ApiConnection;
 

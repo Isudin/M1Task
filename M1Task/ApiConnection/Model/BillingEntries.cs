@@ -1,4 +1,4 @@
-﻿namespace M1Task.Model;
+﻿namespace M1Task.ApiConnection.Model;
 
 public class BillingEntries
 {

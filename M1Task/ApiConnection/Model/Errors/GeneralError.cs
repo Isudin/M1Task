@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace M1Task.Model.Errors;
+namespace M1Task.ApiConnection.Model.Errors;
 
 internal class GeneralError : IError
 {
@@ -8,8 +8,8 @@ internal class GeneralError : IError
 
     public string ErrorMessage
     {
-        get 
-        { 
+        get
+        {
             StringBuilder sb = new();
             foreach (var error in Errors)
                 sb.Append(error.ErrorMessage);
