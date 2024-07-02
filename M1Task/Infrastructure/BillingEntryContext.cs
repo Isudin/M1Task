@@ -1,5 +1,4 @@
-﻿using M1Task.ApiConnection.Model;
-using M1Task.Domain.Model;
+﻿using M1Task.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

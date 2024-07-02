@@ -2,10 +2,10 @@
 using System.Net.Http.Headers;
 using System.Web;
 using System.Net;
-using M1Task.ApiConnection.Model;
-using M1Task.ApiConnection.Model.Errors;
+using M1Task.Domain.ApiConnection.Model;
+using M1Task.Domain.ApiConnection.Model.Errors;
 
-namespace M1Task.ApiConnection;
+namespace M1Task.Domain.ApiConnection;
 
 internal class BillingRequests(string marketPlaceId, DateTime occuredAtFrom, DateTime occuredAtTo, string[] typeIds,
                        string offerId, string orderId, int limit, int offset)
@@ -21,7 +21,7 @@ internal class BillingRequests(string marketPlaceId, DateTime occuredAtFrom, Dat
     private readonly int _limit = limit;
     private readonly int _offset = offset;
 
-    public IError? Error {  get; private set; }
+    public IError? Error { get; private set; }
 
     internal async Task<BillingEntries?> GetBillingEntries()
     {
@@ -56,7 +56,7 @@ internal class BillingRequests(string marketPlaceId, DateTime occuredAtFrom, Dat
         query["marketplaceId"] = _marketPlaceId;
         query["occurredAt.gte"] = JsonConvert.SerializeObject(_occuredAtFrom);
         query["occurredAt.lte"] = JsonConvert.SerializeObject(_occuredAtTo);
-        foreach(var typeId in _typeIds)
+        foreach (var typeId in _typeIds)
             query["type.id"] = typeId;
 
         query["type.id"] = _offerId;

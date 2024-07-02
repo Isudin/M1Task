@@ -10,5 +10,4 @@ public class Billing
     public string Currency { get; set; } = string.Empty;
     public string Tax { get; set; } = string.Empty;
     public string OrderId { get; set; } = string.Empty;
-
 }

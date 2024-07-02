@@ -1,4 +1,4 @@
-﻿namespace M1Task.ApiConnection.Model.Errors;
+﻿namespace M1Task.Domain.ApiConnection.Model.Errors;
 
 internal class AuthorizationError : IError
 {
