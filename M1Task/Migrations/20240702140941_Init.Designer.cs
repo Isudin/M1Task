@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace M1Task.Migrations
 {
-    [DbContext(typeof(BillingEntryContext))]
+    [DbContext(typeof(AllegroContext))]
     [Migration("20240702140941_Init")]
     partial class Init
     {

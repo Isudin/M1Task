@@ -4,11 +4,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace M1Task.Infrastructure;
 
-public class BillingEntryContext : DbContext
+public class AllegroContext : DbContext
 {
     private readonly static string connectionStringName
         = "ConnectionStringThatShouldntActuallyBePushedToGithubAndShouldntHaveSuchALongNameAgen";
     internal DbSet<Billing> Billings { get; set; }
+    internal DbSet<OrderTable> Orders { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
