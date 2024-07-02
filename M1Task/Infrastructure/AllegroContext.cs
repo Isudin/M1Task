@@ -6,6 +6,9 @@ namespace M1Task.Infrastructure;
 
 public class AllegroContext : DbContext
 {
+    private static AllegroContext? _context;
+    internal static AllegroContext Context => _context ??= new AllegroContext();
+
     private readonly static string connectionStringName
         = "ConnectionStringThatShouldntActuallyBePushedToGithubAndShouldntHaveSuchALongNameAgen";
     internal DbSet<Billing> Billings { get; set; }
