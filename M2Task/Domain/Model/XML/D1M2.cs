@@ -1,16 +1,19 @@
 ﻿
 // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
+using AuthenticationServices;
+using System.Xml.Serialization;
+
 namespace M2Task.Domain.Model.XML;
 
 /// <remarks/>
-[System.SerializableAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-[System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-public partial class offer
+[Serializable()]
+[System.ComponentModel.DesignerCategory("code")]
+[XmlType(AnonymousType = true)]
+[XmlRoot(Namespace = "", IsNullable = false)]
+public partial class D1M2Offer
 {
 
-    private offerProducts productsField;
+    private OfferProducts productsField;
 
     private string file_formatField;
 
@@ -23,7 +26,7 @@ public partial class offer
     private string extensionsField;
 
     /// <remarks/>
-    public offerProducts products
+    public OfferProducts Products
     {
         get
         {
@@ -36,8 +39,9 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string file_format
+    [XmlAttribute()]
+    [XmlElement("file_format")]
+    public string FileFormat
     {
         get
         {
@@ -50,8 +54,8 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string generated
+    [XmlAttribute()]
+    public string Generated
     {
         get
         {
@@ -64,8 +68,8 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-    public string currency
+    [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+    public string Currency
     {
         get
         {
@@ -78,8 +82,8 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public decimal version
+    [XmlAttribute()]
+    public decimal Version
     {
         get
         {
@@ -92,8 +96,8 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string extensions
+    [XmlAttribute()]
+    public string Extensions
     {
         get
         {
@@ -106,18 +110,18 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProducts
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProducts
     {
 
-        private offerProductsProduct productField;
+        private OfferProductsProduct productField;
 
         private string languageField;
 
         /// <remarks/>
-        public offerProductsProduct product
+        public OfferProductsProduct Product
         {
             get
             {
@@ -130,8 +134,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string language
+        [XmlAttribute()]
+        public string Language
         {
             get
             {
@@ -145,37 +149,37 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProduct
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProduct
     {
 
-        private offerProductsProductProducer producerField;
+        private OfferProductsProductProducer producerField;
 
-        private offerProductsProductCategory categoryField;
+        private OfferProductsProductCategory categoryField;
 
-        private offerProductsProductUnit unitField;
+        private OfferProductsProductUnit unitField;
 
-        private offerProductsProductWarranty warrantyField;
+        private OfferProductsProductWarranty warrantyField;
 
-        private offerProductsProductCard cardField;
+        private OfferProductsProductCard cardField;
 
-        private offerProductsProductDescription descriptionField;
+        private OfferProductsProductDescription descriptionField;
 
-        private offerProductsProductPrice priceField;
+        private OfferProductsProductPrice priceField;
 
-        private offerProductsProductSrp srpField;
+        private OfferProductsProductSrp srpField;
 
-        private offerProductsProductImages imagesField;
+        private OfferProductsProductImages imagesField;
 
-        private icons iconsField;
+        private Icons iconsField;
 
-        private offerProductsProductSizes sizesField;
+        private OfferProductsProductSizes sizesField;
 
         private offerProductsProductParameter[] parametersField;
 
-        private offerProductsProductGroup groupField;
+        private OfferProductsProductGroup groupField;
 
         private ushort idField;
 
@@ -186,7 +190,7 @@ public partial class offer
         private byte siteField;
 
         /// <remarks/>
-        public offerProductsProductProducer producer
+        public OfferProductsProductProducer Producer
         {
             get
             {
@@ -199,7 +203,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductCategory category
+        public OfferProductsProductCategory Category
         {
             get
             {
@@ -212,7 +216,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductUnit unit
+        public OfferProductsProductUnit Unit
         {
             get
             {
@@ -225,7 +229,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductWarranty warranty
+        public OfferProductsProductWarranty Warranty
         {
             get
             {
@@ -238,7 +242,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductCard card
+        public OfferProductsProductCard Card
         {
             get
             {
@@ -251,7 +255,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductDescription description
+        public OfferProductsProductDescription Description
         {
             get
             {
@@ -264,7 +268,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductPrice price
+        public OfferProductsProductPrice Price
         {
             get
             {
@@ -277,7 +281,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductSrp srp
+        public OfferProductsProductSrp Srp
         {
             get
             {
@@ -290,7 +294,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductImages images
+        public OfferProductsProductImages Images
         {
             get
             {
@@ -303,8 +307,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public icons icons
+        [XmlElement(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public Icons Icons
         {
             get
             {
@@ -317,7 +321,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductSizes sizes
+        public OfferProductsProductSizes Sizes
         {
             get
             {
@@ -330,8 +334,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("parameter", IsNullable = false)]
-        public offerProductsProductParameter[] parameters
+        [XmlArrayItem("parameter", IsNullable = false)]
+        public offerProductsProductParameter[] Parameters
         {
             get
             {
@@ -344,7 +348,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductGroup group
+        public OfferProductsProductGroup Group
         {
             get
             {
@@ -357,8 +361,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort id
+        [XmlAttribute()]
+        public ushort Id
         {
             get
             {
@@ -371,8 +375,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string currency
+        [XmlAttribute()]
+        public string Currency
         {
             get
             {
@@ -385,8 +389,9 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code_producer
+        [XmlAttribute()]
+        [XmlElement("code_producer")]
+        public string CodeProducer
         {
             get
             {
@@ -399,8 +404,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public byte site
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public byte Site
         {
             get
             {
@@ -414,10 +419,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductProducer
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductProducer
     {
 
         private uint idField;
@@ -425,8 +430,8 @@ public partial class offer
         private string nameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public uint id
+        [XmlAttribute()]
+        public uint Id
         {
             get
             {
@@ -439,8 +444,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -454,10 +459,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductCategory
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductCategory
     {
 
         private uint idField;
@@ -467,8 +472,8 @@ public partial class offer
         private string nameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public uint id
+        [XmlAttribute()]
+        public uint Id
         {
             get
             {
@@ -481,8 +486,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -495,8 +500,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -510,10 +515,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductUnit
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductUnit
     {
 
         private byte idField;
@@ -523,8 +528,8 @@ public partial class offer
         private string nameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte id
+        [XmlAttribute()]
+        public byte Id
         {
             get
             {
@@ -537,8 +542,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -551,8 +556,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -566,10 +571,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductWarranty
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductWarranty
     {
 
         private byte idField;
@@ -579,8 +584,8 @@ public partial class offer
         private byte periodField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte id
+        [XmlAttribute()]
+        public byte Id
         {
             get
             {
@@ -593,8 +598,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public string type
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public string Type
         {
             get
             {
@@ -607,8 +612,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public byte period
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public byte Period
         {
             get
             {
@@ -622,17 +627,17 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductCard
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductCard
     {
 
         private string urlField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string url
+        [XmlAttribute()]
+        public string Url
         {
             get
             {
@@ -646,23 +651,23 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescription
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescription
     {
 
-        private offerProductsProductDescriptionName[] nameField;
+        private OfferProductsProductDescriptionName[] nameField;
 
-        private offerProductsProductDescriptionVersion versionField;
+        private OfferProductsProductDescriptionVersion versionField;
 
-        private offerProductsProductDescriptionLong_desc[] long_descField;
+        private OfferProductsProductDescriptionLong_desc[] long_descField;
 
-        private offerProductsProductDescriptionShort_desc[] short_descField;
+        private OfferProductsProductDescriptionShort_desc[] short_descField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("name")]
-        public offerProductsProductDescriptionName[] name
+        [XmlElement("name")]
+        public OfferProductsProductDescriptionName[] Name
         {
             get
             {
@@ -675,7 +680,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductDescriptionVersion version
+        public OfferProductsProductDescriptionVersion Version
         {
             get
             {
@@ -688,8 +693,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("long_desc")]
-        public offerProductsProductDescriptionLong_desc[] long_desc
+        [XmlElement("long_desc")]
+        public OfferProductsProductDescriptionLong_desc[] LongDesc
         {
             get
             {
@@ -702,8 +707,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("short_desc")]
-        public offerProductsProductDescriptionShort_desc[] short_desc
+        [XmlElement("short_desc")]
+        public OfferProductsProductDescriptionShort_desc[] ShortDesc
         {
             get
             {
@@ -717,10 +722,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescriptionName
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescriptionName
     {
 
         private string langField;
@@ -728,8 +733,8 @@ public partial class offer
         private string valueField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -742,7 +747,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [XmlText()]
         public string Value
         {
             get
@@ -757,19 +762,19 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescriptionVersion
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescriptionVersion
     {
 
-        private offerProductsProductDescriptionVersionName[] nameField;
+        private OfferProductsProductDescriptionVersionName[] nameField;
 
         private decimal name1Field;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("name")]
-        public offerProductsProductDescriptionVersionName[] name
+        [XmlElement("name")]
+        public OfferProductsProductDescriptionVersionName[] Name
         {
             get
             {
@@ -782,8 +787,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("name")]
-        public decimal name1
+        [XmlAttribute("name")]
+        public decimal NameAttribute
         {
             get
             {
@@ -797,10 +802,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescriptionVersionName
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescriptionVersionName
     {
 
         private string langField;
@@ -808,8 +813,8 @@ public partial class offer
         private string valueField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -822,7 +827,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [XmlText()]
         public string Value
         {
             get
@@ -837,10 +842,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescriptionLong_desc
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescriptionLong_desc
     {
 
         private string langField;
@@ -848,8 +853,8 @@ public partial class offer
         private string valueField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -862,7 +867,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [XmlText()]
         public string Value
         {
             get
@@ -877,10 +882,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductDescriptionShort_desc
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductDescriptionShort_desc
     {
 
         private string langField;
@@ -888,8 +893,8 @@ public partial class offer
         private string valueField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -902,7 +907,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
+        [XmlText()]
         public string Value
         {
             get
@@ -917,10 +922,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductPrice
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductPrice
     {
 
         private decimal grossField;
@@ -930,8 +935,8 @@ public partial class offer
         private decimal vatField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal gross
+        [XmlAttribute()]
+        public decimal Gross
         {
             get
             {
@@ -944,8 +949,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal net
+        [XmlAttribute()]
+        public decimal Net
         {
             get
             {
@@ -958,8 +963,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal vat
+        [XmlAttribute()]
+        public decimal Vat
         {
             get
             {
@@ -973,79 +978,29 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductSrp
-    {
-
-        private decimal grossField;
-
-        private decimal netField;
-
-        private decimal vatField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal gross
-        {
-            get
-            {
-                return this.grossField;
-            }
-            set
-            {
-                this.grossField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal net
-        {
-            get
-            {
-                return this.netField;
-            }
-            set
-            {
-                this.netField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal vat
-        {
-            get
-            {
-                return this.vatField;
-            }
-            set
-            {
-                this.vatField = value;
-            }
-        }
-    }
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductSrp : OfferProductsProductPrice { }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductImages
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductImages
     {
 
-        private offerProductsProductImagesImage[] largeField;
+        private OfferProductsProductImagesImage[] largeField;
 
-        private offerProductsProductImagesIcons iconsField;
+        private OfferProductsProductImagesIcons iconsField;
 
-        private originalsImage[] originalsField;
+        private OriginalsImage[] originalsField;
 
         private string externalField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("image", IsNullable = false)]
-        public offerProductsProductImagesImage[] large
+        [XmlArrayItem("image", IsNullable = false)]
+        public OfferProductsProductImagesImage[] Large
         {
             get
             {
@@ -1058,7 +1013,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductImagesIcons icons
+        public OfferProductsProductImagesIcons Icons
         {
             get
             {
@@ -1071,9 +1026,9 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        [System.Xml.Serialization.XmlArrayItemAttribute("image", IsNullable = false)]
-        public originalsImage[] originals
+        [XmlArray(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlArrayItem("image", IsNullable = false)]
+        public OriginalsImage[] Originals
         {
             get
             {
@@ -1086,8 +1041,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public string external
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public string External
         {
             get
             {
@@ -1101,10 +1056,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductImagesImage
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductImagesImage
     {
 
         private string urlField;
@@ -1120,8 +1075,8 @@ public partial class offer
         private ushort heightField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string url
+        [XmlAttribute()]
+        public string Url
         {
             get
             {
@@ -1134,8 +1089,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public string url2
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public string Url2
         {
             get
             {
@@ -1148,8 +1103,9 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date_changed
+        [XmlAttribute()]
+        [XmlElement("date_changed")]
+        public string DateChanged
         {
             get
             {
@@ -1162,8 +1118,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string hash
+        [XmlAttribute()]
+        public string Hash
         {
             get
             {
@@ -1176,8 +1132,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public ushort width
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public ushort Width
         {
             get
             {
@@ -1190,8 +1146,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public ushort height
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public ushort Height
         {
             get
             {
@@ -1205,16 +1161,16 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductImagesIcons
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductImagesIcons
     {
 
-        private offerProductsProductImagesIconsIcon iconField;
+        private OfferProductsProductImagesIconsIcon iconField;
 
         /// <remarks/>
-        public offerProductsProductImagesIconsIcon icon
+        public OfferProductsProductImagesIconsIcon Icon
         {
             get
             {
@@ -1228,27 +1184,27 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductImagesIconsIcon
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductImagesIconsIcon : OfferProductsProductImagesImage { }
+
+    /// <remarks/>
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+    public partial class OriginalsImage
     {
 
         private string urlField;
-
-        private string url2Field;
-
-        private string date_changedField;
-
-        private string hashField;
 
         private ushort widthField;
 
         private ushort heightField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string url
+        [XmlAttribute()]
+        public string Url
         {
             get
             {
@@ -1261,50 +1217,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public string url2
-        {
-            get
-            {
-                return this.url2Field;
-            }
-            set
-            {
-                this.url2Field = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date_changed
-        {
-            get
-            {
-                return this.date_changedField;
-            }
-            set
-            {
-                this.date_changedField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string hash
-        {
-            get
-            {
-                return this.hashField;
-            }
-            set
-            {
-                this.hashField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public ushort width
+        [XmlAttribute()]
+        public ushort Width
         {
             get
             {
@@ -1317,8 +1231,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public ushort height
+        [XmlAttribute()]
+        public ushort Height
         {
             get
             {
@@ -1332,73 +1246,18 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-    public partial class originalsImage
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+    [XmlRoot(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", IsNullable = false)]
+    public partial class Icons
     {
 
-        private string urlField;
-
-        private ushort widthField;
-
-        private ushort heightField;
+        private AuctionIcon auction_iconField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string url
-        {
-            get
-            {
-                return this.urlField;
-            }
-            set
-            {
-                this.urlField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort width
-        {
-            get
-            {
-                return this.widthField;
-            }
-            set
-            {
-                this.widthField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort height
-        {
-            get
-            {
-                return this.heightField;
-            }
-            set
-            {
-                this.heightField = value;
-            }
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", IsNullable = false)]
-    public partial class icons
-    {
-
-        private iconsAuction_icon auction_iconField;
-
-        /// <remarks/>
-        public iconsAuction_icon auction_icon
+        [XmlElement("auction_icon")]
+        public AuctionIcon AuctionIcon
         {
             get
             {
@@ -1412,120 +1271,22 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-    public partial class iconsAuction_icon
-    {
-
-        private string date_changedField;
-
-        private string hashField;
-
-        private ushort heightField;
-
-        private ushort widthField;
-
-        private string urlField;
-
-        private string url2Field;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date_changed
-        {
-            get
-            {
-                return this.date_changedField;
-            }
-            set
-            {
-                this.date_changedField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string hash
-        {
-            get
-            {
-                return this.hashField;
-            }
-            set
-            {
-                this.hashField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort height
-        {
-            get
-            {
-                return this.heightField;
-            }
-            set
-            {
-                this.heightField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort width
-        {
-            get
-            {
-                return this.widthField;
-            }
-            set
-            {
-                this.widthField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string url
-        {
-            get
-            {
-                return this.urlField;
-            }
-            set
-            {
-                this.urlField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified)]
-        public string url2
-        {
-            get
-            {
-                return this.url2Field;
-            }
-            set
-            {
-                this.url2Field = value;
-            }
-        }
-    }
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", TypeName = "iconsAuction_icon")]
+    public partial class AuctionIcon : OfferProductsProductImagesImage { }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductSizes
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductSizes
     {
 
-        private offerProductsProductSizesSize sizeField;
+        private OfferProductsProductSizesSize sizeField;
 
         /// <remarks/>
-        public offerProductsProductSizesSize size
+        public OfferProductsProductSizesSize Size
         {
             get
             {
@@ -1539,19 +1300,19 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductSizesSize
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductSizesSize
     {
 
-        private offerProductsProductSizesSizePrice priceField;
+        private OfferProductsProductSizesSizePrice priceField;
 
-        private offerProductsProductSizesSizeSrp srpField;
+        private OfferProductsProductSizesSizeSrp srpField;
 
         private offerProductsProductSizesSizeStock stockField;
 
-        private byte idField;
+        private int idField;
 
         private ulong code_producerField;
 
@@ -1560,7 +1321,7 @@ public partial class offer
         private byte weightField;
 
         /// <remarks/>
-        public offerProductsProductSizesSizePrice price
+        public OfferProductsProductSizesSizePrice Price
         {
             get
             {
@@ -1573,7 +1334,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductSizesSizeSrp srp
+        public OfferProductsProductSizesSizeSrp Srp
         {
             get
             {
@@ -1586,7 +1347,7 @@ public partial class offer
         }
 
         /// <remarks/>
-        public offerProductsProductSizesSizeStock stock
+        public offerProductsProductSizesSizeStock Stock
         {
             get
             {
@@ -1599,8 +1360,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte id
+        [XmlAttribute()]
+        public int Id
         {
             get
             {
@@ -1613,8 +1374,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ulong code_producer
+        [XmlAttribute()]
+        public ulong CodeProducer
         {
             get
             {
@@ -1627,8 +1388,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string code
+        [XmlAttribute()]
+        public string Code
         {
             get
             {
@@ -1641,8 +1402,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte weight
+        [XmlAttribute()]
+        public byte Weight
         {
             get
             {
@@ -1656,10 +1417,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductSizesSizePrice
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductSizesSizePrice
     {
 
         private decimal grossField;
@@ -1667,8 +1428,8 @@ public partial class offer
         private decimal netField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal gross
+        [XmlAttribute()]
+        public decimal Gross
         {
             get
             {
@@ -1681,8 +1442,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal net
+        [XmlAttribute()]
+        public decimal Net
         {
             get
             {
@@ -1696,10 +1457,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductSizesSizeSrp
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductSizesSizeSrp
     {
 
         private decimal grossField;
@@ -1707,8 +1468,8 @@ public partial class offer
         private decimal netField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal gross
+        [XmlAttribute()]
+        public decimal Gross
         {
             get
             {
@@ -1721,8 +1482,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal net
+        [XmlAttribute()]
+        public decimal Net
         {
             get
             {
@@ -1736,19 +1497,19 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
     public partial class offerProductsProductSizesSizeStock
     {
 
-        private byte idField;
+        private int idField;
 
         private byte quantityField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte id
+        [XmlAttribute()]
+        public int Id
         {
             get
             {
@@ -1761,8 +1522,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public byte quantity
+        [XmlAttribute()]
+        public byte Quantity
         {
             get
             {
@@ -1776,13 +1537,13 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
     public partial class offerProductsProductParameter
     {
 
-        private offerProductsProductParameterValue[] valueField;
+        private OfferProductsProductParameterValue[] valueField;
 
         private ushort idField;
 
@@ -1793,8 +1554,8 @@ public partial class offer
         private byte priorityField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("value")]
-        public offerProductsProductParameterValue[] value
+        [XmlElement("value")]
+        public OfferProductsProductParameterValue[] value
         {
             get
             {
@@ -1807,8 +1568,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort id
+        [XmlAttribute()]
+        public ushort Id
         {
             get
             {
@@ -1821,8 +1582,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -1835,8 +1596,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -1849,8 +1610,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public byte priority
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public byte Priority
         {
             get
             {
@@ -1864,10 +1625,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductParameterValue
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductParameterValue
     {
 
         private ushort idField;
@@ -1879,8 +1640,8 @@ public partial class offer
         private byte priorityField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort id
+        [XmlAttribute()]
+        public ushort Id
         {
             get
             {
@@ -1893,8 +1654,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
-        public string lang
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        public string Lang
         {
             get
             {
@@ -1907,8 +1668,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -1921,8 +1682,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-        public byte priority
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        public byte Priority
         {
             get
             {
@@ -1936,18 +1697,18 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductGroup
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductGroup
     {
 
-        private offerProductsProductGroupGroup_by_parameter group_by_parameterField;
+        private OfferProductsProductGroupGroup_by_parameter group_by_parameterField;
 
         private ushort idField;
 
         /// <remarks/>
-        public offerProductsProductGroupGroup_by_parameter group_by_parameter
+        public OfferProductsProductGroupGroup_by_parameter group_by_parameter
         {
             get
             {
@@ -1960,8 +1721,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort id
+        [XmlAttribute()]
+        public ushort Id
         {
             get
             {
@@ -1975,20 +1736,20 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductGroupGroup_by_parameter
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductGroupGroup_by_parameter
     {
 
-        private offerProductsProductGroupGroup_by_parameterProduct_value product_valueField;
+        private OfferProductsProductGroupGroup_by_parameterProduct_value product_valueField;
 
         private string idField;
 
         private string nameField;
 
         /// <remarks/>
-        public offerProductsProductGroupGroup_by_parameterProduct_value product_value
+        public OfferProductsProductGroupGroup_by_parameterProduct_value product_value
         {
             get
             {
@@ -2001,8 +1762,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
+        [XmlAttribute()]
+        public string Id
         {
             get
             {
@@ -2015,8 +1776,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string name
+        [XmlAttribute()]
+        public string Name
         {
             get
             {
@@ -2030,10 +1791,10 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class offerProductsProductGroupGroup_by_parameterProduct_value
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public partial class OfferProductsProductGroupGroup_by_parameterProduct_value
     {
 
         private string idField;
@@ -2041,8 +1802,8 @@ public partial class offer
         private decimal nameField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string id
+        [XmlAttribute()]
+        public string Id
         {
             get
             {
@@ -2055,8 +1816,8 @@ public partial class offer
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal name
+        [XmlAttribute()]
+        public decimal Name
         {
             get
             {
@@ -2070,18 +1831,18 @@ public partial class offer
     }
 
     /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", IsNullable = false)]
-    public partial class originals
+    [Serializable()]
+    [System.ComponentModel.DesignerCategory("code")]
+    [XmlType(AnonymousType = true, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+    [XmlRoot(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", IsNullable = false)]
+    public partial class Originals
     {
 
-        private originalsImage[] imageField;
+        private OriginalsImage[] imageField;
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("image")]
-        public originalsImage[] image
+        [XmlElement("image")]
+        public OriginalsImage[] Image
         {
             get
             {
