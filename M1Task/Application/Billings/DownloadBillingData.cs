@@ -4,7 +4,7 @@ using M1Task.Infrastructure;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace M1Task.Domain.Billings
+namespace M1Task.Application.Billings
 {
     internal class DownloadBillingData
     {

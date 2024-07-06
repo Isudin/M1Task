@@ -5,7 +5,7 @@ using System.Net;
 using M1Task.Domain.Model.Api;
 using M1Task.Domain.Model.Api.Errors;
 
-namespace M1Task.Domain.Billings;
+namespace M1Task.Application.Billings;
 
 internal class BillingRequests(string orderId)
 {

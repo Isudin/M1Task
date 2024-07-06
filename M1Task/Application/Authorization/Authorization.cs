@@ -8,7 +8,7 @@ using System.Text;
 using System.Diagnostics;
 using M1Task.Domain.Model.Api;
 
-namespace M1Task.Domain.Authorization
+namespace M1Task.Application.Authorization
 {
     internal class Authorization
     {

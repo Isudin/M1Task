@@ -4,7 +4,7 @@ using M1Task.Domain.Model.Database;
 using M1Task.Infrastructure;
 using Mapster;
 
-namespace M1Task.Domain.Billings
+namespace M1Task.Application.Billings
 {
     internal class BillingsManagement
     {
