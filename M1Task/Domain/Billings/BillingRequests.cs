@@ -2,10 +2,10 @@
 using System.Net.Http.Headers;
 using System.Web;
 using System.Net;
-using M1Task.Domain.ApiConnection.Model;
-using M1Task.Domain.ApiConnection.Model.Errors;
+using M1Task.Domain.Model.Api;
+using M1Task.Domain.Model.Api.Errors;
 
-namespace M1Task.Domain.ApiConnection;
+namespace M1Task.Domain.Billings;
 
 internal class BillingRequests(string orderId)
 {

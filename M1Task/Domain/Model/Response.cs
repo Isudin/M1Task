@@ -1,4 +1,4 @@
-﻿using M1Task.Domain.ApiConnection.Model.Errors;
+﻿using M1Task.Domain.Model.Api.Errors;
 
 namespace M1Task.Domain.Model
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace M1Task.Domain.ApiConnection.Model.Errors;
+namespace M1Task.Domain.Model.Api.Errors;
 
 internal class GeneralError : IError
 {

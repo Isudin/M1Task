@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Net;
 using System.Web;
-using M1Task.Domain.Api.Model;
 using M1Task.Domain.Model;
 using System.Text;
 using System.Diagnostics;
+using M1Task.Domain.Model.Api;
 
 namespace M1Task.Domain.Authorization
 {

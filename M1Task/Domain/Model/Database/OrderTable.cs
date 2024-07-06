@@ -1,4 +1,4 @@
-﻿namespace M1Task.Domain.Model;
+﻿namespace M1Task.Domain.Model.Database;
 
 public partial class OrderTable
 {

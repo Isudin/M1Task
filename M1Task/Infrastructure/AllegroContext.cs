@@ -1,4 +1,4 @@
-﻿using M1Task.Domain.Model;
+﻿using M1Task.Domain.Model.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

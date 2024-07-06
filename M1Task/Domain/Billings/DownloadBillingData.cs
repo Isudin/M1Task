@@ -1,5 +1,5 @@
-﻿using M1Task.Domain.ApiConnection;
-using M1Task.Domain.Model;
+﻿using M1Task.Domain.Model;
+using M1Task.Domain.Model.Database;
 using M1Task.Infrastructure;
 using System.Text;
 using System.Text.RegularExpressions;

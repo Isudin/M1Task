@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace M1Task.Domain.Api.Model;
+namespace M1Task.Domain.Model.Api;
 
 internal class UserAuthorization
 {
