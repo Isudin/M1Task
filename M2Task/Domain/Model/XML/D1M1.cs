@@ -1,8 +1,9 @@
-﻿// NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
+﻿#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable
+
+// NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
 using System.Xml.Serialization;
 
 namespace M2Task.Domain.Model.XML;
-
 
 /// <remarks/>
 [Serializable()]
@@ -11,7 +12,6 @@ namespace M2Task.Domain.Model.XML;
 [XmlRoot(Namespace = "", IsNullable = false)]
 public partial class D1M1Offer
 {
-
     private OfferProducts productsField;
 
     private string file_formatField;
@@ -399,3 +399,4 @@ public partial class D1M1Offer
         }
     }
 }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.

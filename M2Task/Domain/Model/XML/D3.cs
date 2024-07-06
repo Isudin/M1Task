@@ -1,4 +1,5 @@
-﻿
+﻿#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
 // NOTE: Generated code may require at least .NET Framework 4.5 or .NET Core/Standard 2.0.
 using System.Xml.Serialization;
 
@@ -392,3 +393,4 @@ public partial class D3Produkty
         }
     }
 }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
