@@ -10,7 +10,7 @@ namespace M2Task.Domain.Model.XML;
 [System.ComponentModel.DesignerCategory("code")]
 [XmlType(AnonymousType = true)]
 [XmlRoot(Namespace = "", IsNullable = false, ElementName = "offer")]
-public partial class D1M1Offer
+public partial class D1M1Offer : IXmlModel
 {
     private OfferProducts productsField;
 
