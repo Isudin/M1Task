@@ -9,7 +9,7 @@ namespace M2Task.Domain.Model.XML;
 [Serializable()]
 [System.ComponentModel.DesignerCategory("code")]
 [XmlType(AnonymousType = true)]
-[XmlRoot(Namespace = "", IsNullable = false)]
+[XmlRoot(Namespace = "", IsNullable = false, ElementName = "offer")]
 public partial class D1M1Offer
 {
     private OfferProducts productsField;
@@ -34,8 +34,7 @@ public partial class D1M1Offer
     }
 
     /// <remarks/>
-    [XmlAttribute()]
-    [XmlElement("file_format")]
+    [XmlAttribute("file_format")]
     public string FileFormat
     {
         get
@@ -316,8 +315,7 @@ public partial class D1M1Offer
 
         /// <remarks/>
         /// EAN
-        [XmlAttribute()]
-        [XmlElement("code_producer")]
+        [XmlAttribute("code_producer")]
         public string CodeProducer
         {
             get

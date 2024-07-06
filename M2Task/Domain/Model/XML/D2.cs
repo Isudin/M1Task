@@ -8,7 +8,7 @@ namespace M2Task.Domain.Model.XML;
 [Serializable()]
 [System.ComponentModel.DesignerCategory("code")]
 [XmlType(AnonymousType = true, TypeName = "products")]
-[XmlRoot(Namespace = "", IsNullable = false)]
+[XmlRoot(Namespace = "", IsNullable = false, ElementName = "products")]
 public partial class D2Products
 {
     private productsProduct productField;

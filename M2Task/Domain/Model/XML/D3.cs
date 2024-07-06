@@ -9,7 +9,7 @@ namespace M2Task.Domain.Model.XML;
 [Serializable()]
 [System.ComponentModel.DesignerCategory("code")]
 [XmlType(AnonymousType = true, TypeName = "produkt")]
-[XmlRoot(Namespace = "", IsNullable = false)]
+[XmlRoot(Namespace = "", IsNullable = false, ElementName = "produkty")]
 public partial class D3Produkty
 {
 
@@ -239,7 +239,7 @@ public partial class D3Produkty
         }
 
         /// <remarks/>
-        [XmlElement("cena_sugerowana")]
+        [XmlElement("kod_dostawcy")]
         public string KodDostawcy
         {
             get
