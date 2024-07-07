@@ -120,7 +120,7 @@ public partial class D1M2Offer : IXmlModel
         private string languageField;
 
         /// <remarks/>
-        public OfferProductsProduct Product
+        public OfferProductsProduct[] Products
         {
             get
             {
@@ -1283,7 +1283,7 @@ public partial class D1M2Offer : IXmlModel
         private OfferProductsProductSizesSize sizeField;
 
         /// <remarks/>
-        public OfferProductsProductSizesSize Size
+        public OfferProductsProductSizesSize[] Sizes
         {
             get
             {
@@ -1311,7 +1311,7 @@ public partial class D1M2Offer : IXmlModel
 
         private int idField;
 
-        private ulong code_producerField;
+        private string code_producerField;
 
         private string codeField;
 
@@ -1372,7 +1372,7 @@ public partial class D1M2Offer : IXmlModel
 
         /// <remarks/>
         [XmlAttribute()]
-        public ulong CodeProducer
+        public string CodeProducer
         {
             get
             {

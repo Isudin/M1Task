@@ -59,7 +59,7 @@ public partial class MainPageViewModel
 
         Product?[] products = await Task.WhenAll(mappingResults);
         foreach (Product? product in products)
-            if (product != null && !Products.Any(x => x.Ean == product.Ean || x.Name == product.Name))
+            if (product != null && !Products.Any(x => x.Ean == product.Ean || x.Names == product.Names))
                 Products.Add(product);
     }
 
