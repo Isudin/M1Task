@@ -6,42 +6,45 @@
              x:DataType="presentation:MainPageViewModel">
 
     <ScrollView BackgroundColor="#1E1E1E">
-        <VerticalStackLayout>
-            <Button Text="Load XML files" Command="{Binding SelectFilesCommand}">
-                
-            </Button>
-            <VerticalStackLayout Padding="30,0" Spacing="25" BindableLayout.ItemsSource="{Binding Products}">
-                <!--<Grid HorizontalOptions="FillAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="250"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0"
-                        Stroke="SlateGray"
-                        StrokeThickness="1"
-                        Margin="5">
-                        <VerticalStackLayout Grid.Column="0"
+        <VerticalStackLayout>
+            <Button Text="Load XML files" Command="{Binding SelectFilesCommand}"/>
+            <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Margin="5">
+                            <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Test" Grid.Column="0"/>
+                                <!--<VerticalStackLayout Grid.Column="0"
                               HorizontalOptions="Fill">
 
-                            <BoxView Color="SlateGray"
+                                    <BoxView Color="SlateGray"
                                  Margin="10,10,10,0"
                                  HeightRequest="2"/>
 
-                            <Grid BindableLayout.ItemsSource="{Binding Products}">
-                                <BindableLayout.ItemTemplate>
-                                    <DataTemplate x:DataType="model:Product">
-                                        <HorizontalStackLayout VerticalOptions="Center">
-                                            <Label Text="{Binding Name}"/>
-                                            <Label Text="{Binding Description}"/>
-                                        </HorizontalStackLayout>
-                                    </DataTemplate>
-                                </BindableLayout.ItemTemplate>
+                                    <Grid BindableLayout.ItemsSource="{Binding Products}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate x:DataType="model:Product">
+                                                <HorizontalStackLayout VerticalOptions="Center">
+                                                    <Label Text="{Binding Name}"/>
+                                                    <Label Text="{Binding Description}"/>
+                                                </HorizontalStackLayout>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </Grid>
+                                </VerticalStackLayout>-->
                             </Grid>
-                        </VerticalStackLayout>
-                    </Border>
-                </Grid>-->
-            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
