@@ -88,7 +88,7 @@ public partial class D1M1Offer : IXmlModel
 
         /// <remarks/>
         [XmlElement("product")]
-        public OfferProductsProduct[] Product
+        public OfferProductsProduct[] Products
         {
             get
             {
@@ -256,7 +256,7 @@ public partial class D1M1Offer : IXmlModel
         private OfferProductsProductSizesSize sizeField;
 
         /// <remarks/>
-        public OfferProductsProductSizesSize Size
+        public OfferProductsProductSizesSize[] Sizes
         {
             get
             {

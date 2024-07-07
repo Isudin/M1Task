@@ -3,13 +3,14 @@
     public class Product
     {
         public int Id { get; set; }
+        public string Code { get; set; }
+        public string Ean { get; set; } = string.Empty;
         public LocalizedText? Name { get; set; }
         public LocalizedText? Description { get; set; }
         public string? PictureUrl { get; set; }
         public bool IsUseful { get; set; }
         public Price? Srp { get; set; }
-        public string Ean { get; set; } = string.Empty;
-        public List<int> VariantsIds { get; set; } = [];
+        public List<string> VariantsCodes { get; set; } = [];
 
         public record LocalizedText(decimal Text, string LanguageCode = "PLN") { }
 
