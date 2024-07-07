@@ -1,6 +1,6 @@
 ﻿namespace M2Task.Domain.Model.Database
 {
-    internal class Product
+    public class Product
     {
         public int Id { get; set; }
         public LocalizedText Name { get; set; } = new();
