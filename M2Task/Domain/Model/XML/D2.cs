@@ -7,15 +7,15 @@ namespace M2Task.Domain.Model.XML;
 /// <remarks/>
 [Serializable()]
 [System.ComponentModel.DesignerCategory("code")]
-[XmlType(AnonymousType = true, TypeName = "products")]
+[XmlType(AnonymousType = true)]
 [XmlRoot(Namespace = "", IsNullable = false, ElementName = "products")]
 public partial class D2Products : IXmlModel
 {
-    private productsProduct[] productsField;
+    private ProductsProduct[] productsField;
 
-    private ushort elmentsField;
+    private int elmentsField;
 
-    private uint clientidField;
+    private int clientidField;
 
     private string langField;
 
@@ -26,7 +26,8 @@ public partial class D2Products : IXmlModel
     private byte versionField;
 
     /// <remarks/>
-    public productsProduct[] Products
+    [XmlElement("product")]
+    public ProductsProduct[] Products
     {
         get
         {
@@ -40,7 +41,7 @@ public partial class D2Products : IXmlModel
 
     /// <remarks/>
     [XmlAttribute()]
-    public ushort Elments
+    public int Elments
     {
         get
         {
@@ -54,7 +55,7 @@ public partial class D2Products : IXmlModel
 
     /// <remarks/>
     [XmlAttribute()]
-    public uint ClientId
+    public int ClientId
     {
         get
         {
@@ -126,7 +127,7 @@ public partial class D2Products : IXmlModel
     [Serializable()]
     [System.ComponentModel.DesignerCategory("code")]
     [XmlType(AnonymousType = true)]
-    public partial class productsProduct
+    public partial class ProductsProduct
     {
 
         private string eanField;
@@ -161,15 +162,16 @@ public partial class D2Products : IXmlModel
 
         private byte quantityPerBoxField;
 
-        private decimal priceAfterDiscountNetField;
+        private string priceAfterDiscountNetField;
 
-        private byte vatField;
+        private string vatField;
 
-        private byte retailPriceGrossField;
+        private string retailPriceGrossField;
 
         private ProductsProductPhoto[] photosField;
 
         /// <remarks/>
+        [XmlElement("ean")]
         public string Ean
         {
             get
@@ -183,6 +185,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("id")]
         public byte Id
         {
             get
@@ -196,6 +199,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("sku")]
         public string Sku
         {
             get
@@ -209,6 +213,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("name")]
         public string Name
         {
             get
@@ -222,6 +227,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("desc")]
         public string Desc
         {
             get
@@ -235,6 +241,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("url")]
         public string Url
         {
             get
@@ -262,6 +269,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("attributes")]
         public object Attributes
         {
             get
@@ -275,6 +283,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("unit")]
         public string Unit
         {
             get
@@ -288,6 +297,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("weight")]
         public string Weight
         {
             get
@@ -314,6 +324,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("inStock")]
         public string InStock
         {
             get
@@ -327,6 +338,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("qty")]
         public byte Qty
         {
             get
@@ -340,6 +352,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("availability")]
         public object Availability
         {
             get
@@ -353,6 +366,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("requiredBox")]
         public string RequiredBox
         {
             get
@@ -366,6 +380,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("quantityPerBox")]
         public byte QuantityPerBox
         {
             get
@@ -379,7 +394,8 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
-        public decimal PriceAfterDiscountNet
+        [XmlElement("priceAfterDiscountNet")]
+        public string PriceAfterDiscountNet
         {
             get
             {
@@ -392,7 +408,8 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
-        public byte Vat
+        [XmlElement("vat")]
+        public string Vat
         {
             get
             {
@@ -405,7 +422,8 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
-        public byte RetailPriceGross
+        [XmlElement("retailPriceGross")]
+        public string RetailPriceGross
         {
             get
             {
@@ -444,7 +462,7 @@ public partial class D2Products : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public ulong Id
         {
             get
@@ -486,7 +504,7 @@ public partial class D2Products : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public int Id
         {
             get
@@ -500,7 +518,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("main")]
         public byte Main
         {
             get
