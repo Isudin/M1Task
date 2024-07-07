@@ -21,7 +21,6 @@ namespace M2Task.Domain
             if (xml is D3Produkty d3)
                 return D3Map.Map(d3);
 
-
             return [];
         }
     }

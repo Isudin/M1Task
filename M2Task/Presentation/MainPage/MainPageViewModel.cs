@@ -1,6 +1,8 @@
-﻿using M2Task.Domain.Model.Database;
+﻿using M2Task.Domain;
+using M2Task.Domain.Model.Database;
 using M2Task.Domain.Model.XML;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
@@ -25,7 +27,7 @@ public partial class MainPageViewModel
         selectedFiles = selectedFiles.Where(x => x.ContentType == "text/xml");
         if (!selectedFiles.Any()) return;
 
-        ReadSelectedFiles(selectedFiles).GetAwaiter().GetResult();
+        Task.Run(async () => await ReadSelectedFiles(selectedFiles));
     }
 
     private async Task ReadSelectedFiles(IEnumerable<FileResult> files)
@@ -39,17 +41,13 @@ public partial class MainPageViewModel
 
     private async Task ReadFile(FileResult file)
     {
-        XmlDocument xml = new();
-        xml.Load(file.OpenReadAsync().GetAwaiter().GetResult());
-        var reader = new XmlNodeReader(xml);
-
         List<Task<object?>> deserializationTasks = [];
         foreach (Type xmlModel in XmlModels)
-            deserializationTasks.Add(DeserializeFile(xmlModel, reader));
+            deserializationTasks.Add(DeserializeFile(xmlModel, file));
 
-        object?[] deserializedFiles = await Task.WhenAll(deserializationTasks);
+        object?[] deserializedFiles = await Task.WhenAll(deserializationTasks.Where(x => x != null));
 
-        List<Task<Product?>> mappingResults = [];
+        List<Task<Product[]>> mappingResults = [];
         foreach (object? deserializedFile in deserializedFiles)
         {
             if (deserializedFile == null) continue;
@@ -57,24 +55,27 @@ public partial class MainPageViewModel
             mappingResults.Add(MapDeserializedFile(deserializedFile));
         }
 
-        Product?[] products = await Task.WhenAll(mappingResults);
-        foreach (Product? product in products)
-            if (product != null && !Products.Any(x => x.Ean == product.Ean || x.Names == product.Names))
-                Products.Add(product);
+        Product[][] products = await Task.WhenAll(mappingResults);
+        foreach (Product[] pProducts in products)
+            foreach (Product product in pProducts)
+                if (product != null && !Products.Any(x => x.Ean == product.Ean || x.Names == product.Names))
+                    Products.Add(product);
     }
 
-    private Task<object?> DeserializeFile(Type xmlModel, XmlNodeReader reader)
+    private Task<object?> DeserializeFile(Type xmlModel, FileResult file)
     {
+        var stream = file.OpenReadAsync().GetAwaiter().GetResult();
+        var reader = XmlReader.Create(stream);
         XmlSerializer serializer = new(xmlModel);
         if (!serializer.CanDeserialize(reader)) return Task.FromResult<object?>(null);
 
-        return Task.FromResult(serializer.Deserialize(reader));
+        stream.Position = 0;
+        return Task.FromResult(serializer.Deserialize(stream));
     }
 
-    private Task<Product?> MapDeserializedFile(object deserializedFile)
+    private async Task<Product[]> MapDeserializedFile(object deserializedFile)
     {
-        //TODO Add file mapping
-        return null;
+        return await Task.Run(() => XmlMapper.MapToProducts((IXmlModel)deserializedFile));
     }
 
     private Type[] ListAllXmlModels()
@@ -82,7 +83,7 @@ public partial class MainPageViewModel
         var type = typeof(IXmlModel);
         return AppDomain.CurrentDomain.GetAssemblies()
             .SelectMany(s => s.GetTypes())
-            .Where(type.IsAssignableFrom)
+            .Where(x => type.IsAssignableFrom(x) && x.Name != type.Name)
             .ToArray();
     }
 }
