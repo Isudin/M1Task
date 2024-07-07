@@ -11,7 +11,7 @@ namespace M2Task.Domain.Model.XML;
 [XmlRoot(Namespace = "", IsNullable = false, ElementName = "products")]
 public partial class D2Products : IXmlModel
 {
-    private productsProduct productField;
+    private productsProduct[] productsField;
 
     private ushort elmentsField;
 
@@ -26,15 +26,15 @@ public partial class D2Products : IXmlModel
     private byte versionField;
 
     /// <remarks/>
-    public productsProduct Product
+    public productsProduct[] Products
     {
         get
         {
-            return this.productField;
+            return this.productsField;
         }
         set
         {
-            this.productField = value;
+            this.productsField = value;
         }
     }
 
@@ -161,7 +161,7 @@ public partial class D2Products : IXmlModel
 
         private byte quantityPerBoxField;
 
-        private string priceAfterDiscountNetField;
+        private decimal priceAfterDiscountNetField;
 
         private byte vatField;
 
@@ -379,7 +379,7 @@ public partial class D2Products : IXmlModel
         }
 
         /// <remarks/>
-        public string PriceAfterDiscountNet
+        public decimal PriceAfterDiscountNet
         {
             get
             {
