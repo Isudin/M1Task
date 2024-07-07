@@ -1038,7 +1038,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlArray(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlArray(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", ElementName = "originals")]
         [XmlArrayItem("image", IsNullable = false)]
         public OriginalsImage[] Originals
         {
@@ -1214,7 +1214,7 @@ public partial class D1M2Offer : IXmlModel
         private ushort heightField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("url")]
         public string Url
         {
             get

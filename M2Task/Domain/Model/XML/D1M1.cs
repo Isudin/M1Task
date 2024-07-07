@@ -145,6 +145,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("srp")]
         public OfferProductsProductSrp Srp
         {
             get
@@ -158,6 +159,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("sizes")]
         public OfferProductsProductSizes Sizes
         {
             get
@@ -199,7 +201,7 @@ public partial class D1M1Offer : IXmlModel
         private decimal vatField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("gross")]
         public decimal Gross
         {
             get
@@ -213,7 +215,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("net")]
         public decimal Net
         {
             get
@@ -227,7 +229,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("vat")]
         public decimal Vat
         {
             get
@@ -257,6 +259,7 @@ public partial class D1M1Offer : IXmlModel
         private OfferProductsProductSizesSize[] sizeField;
 
         /// <remarks/>
+        [XmlElement("size")]
         public OfferProductsProductSizesSize[] Sizes
         {
             get
@@ -288,7 +291,8 @@ public partial class D1M1Offer : IXmlModel
         private decimal weightField;
 
         /// <remarks/>
-        public OfferProductsProductSizesSizeStock stock
+        [XmlElement("stock")]
+        public OfferProductsProductSizesSizeStock Stock
         {
             get
             {
@@ -301,7 +305,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public int Id
         {
             get
@@ -330,7 +334,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("code")]
         public string Code
         {
             get
@@ -370,7 +374,7 @@ public partial class D1M1Offer : IXmlModel
         private int quantityField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("is")]
         public int Id
         {
             get
@@ -384,7 +388,7 @@ public partial class D1M1Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("quantity")]
         public int Quantity
         {
             get

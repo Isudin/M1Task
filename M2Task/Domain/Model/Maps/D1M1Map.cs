@@ -26,6 +26,7 @@ namespace M2Task.Domain.Model.Maps
                     {
                         product.Ean = size.CodeProducer;
                         product.Code = size.Code;
+                        product.Quantity = size.Stock.Quantity;
                     }
                     else
                         product.VariantsCodes.Add(size.Code);

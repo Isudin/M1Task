@@ -41,7 +41,7 @@ namespace M2Task.Domain.Model.Maps
 
         private static void AddDescriptions(D1M2Offer.OfferProductsProduct p, Product product)
         {
-            foreach (var desc in p.Description.LongDesc)
+            foreach (var desc in p.Description.ShortDesc)
             {
                 if (product.Descriptions.Any(x => x.LanguageCode == desc.Lang)) continue;
 

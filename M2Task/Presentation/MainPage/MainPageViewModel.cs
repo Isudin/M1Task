@@ -73,15 +73,22 @@ public partial class MainPageViewModel
         {
             return Task.FromResult(serializer.Deserialize(stream));
         }
-        catch (Exception ex) 
+        catch
         {
-            return null;
+            return null!;
         }
     }
 
     private async Task<Product[]> MapDeserializedFile(object deserializedFile)
     {
-        return await Task.Run(() => XmlMapper.MapToProducts((IXmlModel)deserializedFile));
+        try
+        {
+            return await Task.Run(() => XmlMapper.MapToProducts((IXmlModel)deserializedFile));
+        }
+        catch
+        {
+            return [];
+        }
     }
 
     private Type[] ListAllXmlModels()
