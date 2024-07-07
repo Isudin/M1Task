@@ -42,26 +42,38 @@ public partial class MainPageViewModel
         xml.Load(file.OpenReadAsync().GetAwaiter().GetResult());
         var reader = new XmlNodeReader(xml);
 
+        List<Task<object?>> deserializationTasks = [];
         foreach (Type xmlModel in XmlModels)
+            deserializationTasks.Add(DeserializeFile(xmlModel, reader));
+
+        object?[] deserializedFiles = await Task.WhenAll(deserializationTasks);
+
+        List<Task<Product?>> mappingResults = [];
+        foreach (object? deserializedFile in deserializedFiles)
         {
-            object? deserializedFile = DeserializeFile(xmlModel, reader);
             if (deserializedFile == null) continue;
 
-            MapDeserializedFile(xmlModel, deserializedFile);
+            mappingResults.Add(MapDeserializedFile(deserializedFile));
         }
+
+        Product?[] products = await Task.WhenAll(mappingResults);
+        foreach (Product? product in products)
+            if (product != null && !Products.Any(x => x.Ean == product.Ean || x.Name == product.Name))
+                Products.Add(product);
     }
 
-    private async Task<object?> DeserializeFile(Type xmlModel, XmlNodeReader reader)
+    private Task<object?> DeserializeFile(Type xmlModel, XmlNodeReader reader)
     {
         XmlSerializer serializer = new(xmlModel);
-        if (!serializer.CanDeserialize(reader)) return null;
+        if (!serializer.CanDeserialize(reader)) return Task.FromResult<object?>(null);
 
-        return serializer.Deserialize(reader);
+        return Task.FromResult(serializer.Deserialize(reader));
     }
 
-    private async Task MapDeserializedFile(Type xmlModel, object deserializedFile)
+    private Task<Product?> MapDeserializedFile(object deserializedFile)
     {
-
+        //TODO Add file mapping
+        return null;
     }
 
     private Type[] ListAllXmlModels()
