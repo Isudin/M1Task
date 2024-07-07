@@ -7,7 +7,7 @@
         public string Ean { get; set; } = string.Empty;
         public List<LocalizedText> Names { get; set; } = [];
         public List<LocalizedText> Descriptions { get; set; } = [];
-        public List<string> ImageUrls { get; set; }
+        public List<string> ImageUrls { get; set; } = [];
         public bool IsUseful { get; set; }
         public Price? Srp { get; set; }
         public List<string> VariantsCodes { get; set; } = [];

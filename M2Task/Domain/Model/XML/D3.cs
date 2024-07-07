@@ -13,10 +13,10 @@ namespace M2Task.Domain.Model.XML;
 public partial class D3Produkty : IXmlModel
 {
 
-    private ProduktyProdukt produktField;
+    private ProduktyProdukt[] produktField;
 
     /// <remarks/>
-    public ProduktyProdukt Produkt
+    public ProduktyProdukt[] Produkty
     {
         get
         {
@@ -356,7 +356,7 @@ public partial class D3Produkty : IXmlModel
         private ProduktyProduktZdjeciaZdjecie zdjecieField;
 
         /// <remarks/>
-        public ProduktyProduktZdjeciaZdjecie Zdjecie
+        public ProduktyProduktZdjeciaZdjecie[] Zdjecia
         {
             get
             {
