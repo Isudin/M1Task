@@ -25,15 +25,16 @@ public partial class MainPageViewModel
         selectedFiles = selectedFiles.Where(x => x.ContentType == "text/xml");
         if (!selectedFiles.Any()) return;
 
-        var t = ReadSelectedFiles(selectedFiles);
+        ReadSelectedFiles(selectedFiles).GetAwaiter().GetResult();
     }
 
     private async Task ReadSelectedFiles(IEnumerable<FileResult> files)
     {
+        List<Task> tasks = [];
         foreach (var file in files)
-        {
-            //if 
-        }
+            tasks.Add(ReadFile(file));
+
+        await Task.WhenAll(tasks);
     }
 
     private async Task ReadFile(FileResult file)
