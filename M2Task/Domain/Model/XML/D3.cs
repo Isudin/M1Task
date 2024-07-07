@@ -8,7 +8,7 @@ namespace M2Task.Domain.Model.XML;
 /// <remarks/>
 [Serializable()]
 [System.ComponentModel.DesignerCategory("code")]
-[XmlType(AnonymousType = true, TypeName = "produkt")]
+[XmlType(AnonymousType = true)]
 [XmlRoot(Namespace = "", IsNullable = false, ElementName = "produkty")]
 public partial class D3Produkty : IXmlModel
 {
@@ -16,6 +16,7 @@ public partial class D3Produkty : IXmlModel
     private ProduktyProdukt[] produktField;
 
     /// <remarks/>
+    [XmlElement("produkt")]
     public ProduktyProdukt[] Produkty
     {
         get
@@ -76,6 +77,7 @@ public partial class D3Produkty : IXmlModel
         private ProduktyProduktZdjecia zdjeciaField;
 
         /// <remarks/>
+        [XmlElement("id")]
         public string Id
         {
             get
@@ -89,6 +91,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("nazwa")]
         public string Nazwa
         {
             get
@@ -172,6 +175,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("kod")]
         public string Kod
         {
             get
@@ -185,6 +189,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("ean")]
         public string Ean
         {
             get
@@ -198,6 +203,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("status")]
         public string Status
         {
             get
@@ -253,6 +259,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("vat")]
         public string Vat
         {
             get
@@ -266,6 +273,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("rozmiar")]
         public string Rozmiar
         {
             get
@@ -292,6 +300,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("cat")]
         public string Cat
         {
             get
@@ -333,6 +342,7 @@ public partial class D3Produkty : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("zdjecia")]
         public ProduktyProduktZdjecia Zdjecia
         {
             get
@@ -353,9 +363,10 @@ public partial class D3Produkty : IXmlModel
     public partial class ProduktyProduktZdjecia
     {
 
-        private ProduktyProduktZdjeciaZdjecie zdjecieField;
+        private ProduktyProduktZdjeciaZdjecie[] zdjecieField;
 
         /// <remarks/>
+        [XmlElement("zdjecie")]
         public ProduktyProduktZdjeciaZdjecie[] Zdjecia
         {
             get
@@ -379,7 +390,7 @@ public partial class D3Produkty : IXmlModel
         private string urlField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("url")]
         public string Url
         {
             get

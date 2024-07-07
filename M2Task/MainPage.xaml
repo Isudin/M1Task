@@ -10,10 +10,24 @@
         <VerticalStackLayout>
             <Button Text="Load XML files" Command="{Binding SelectFilesCommand}"/>
             <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.Header>
+                    <Grid HorizontalOptions="FillAndExpand" Padding="10" x:DataType="model:Product">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Address" Grid.Column="0"/>
+                        <Label Text="Cost" Grid.Column="1"/>
+                    </Grid>
+                </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border Stroke="SlateGray" StrokeThickness="1" Margin="5">
-                            <Grid HorizontalOptions="FillAndExpand" Padding="10">
+                            <Grid HorizontalOptions="FillAndExpand" Padding="10" x:DataType="model:Product">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
@@ -21,25 +35,15 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Text="Test" Grid.Column="0"/>
-                                <!--<VerticalStackLayout Grid.Column="0"
-                              HorizontalOptions="Fill">
-
-                                    <BoxView Color="SlateGray"
-                                 Margin="10,10,10,0"
-                                 HeightRequest="2"/>
-
-                                    <Grid BindableLayout.ItemsSource="{Binding Products}">
-                                        <BindableLayout.ItemTemplate>
-                                            <DataTemplate x:DataType="model:Product">
-                                                <HorizontalStackLayout VerticalOptions="Center">
-                                                    <Label Text="{Binding Name}"/>
-                                                    <Label Text="{Binding Description}"/>
-                                                </HorizontalStackLayout>
-                                            </DataTemplate>
-                                        </BindableLayout.ItemTemplate>
-                                    </Grid>
-                                </VerticalStackLayout>-->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200"/>
+                                    <RowDefinition Height="200"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding Name.Text}" Grid.Column="0" Grid.RowSpan="2"/>
+                                <Label Text="{Binding Name.Text}" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Description.Text}" Grid.Column="1" Grid.Row="1"/>
+                                <Label Text="{Binding Srp.Gross}" Grid.Column="1" Grid.Row="0"/>
+                                <Label Text="{Binding Name.Text}" Grid.Column="1" Grid.Row="0"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

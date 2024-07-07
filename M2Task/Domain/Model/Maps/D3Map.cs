@@ -2,6 +2,7 @@
 using M2Task.Domain.Model.XML;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,14 +37,14 @@ namespace M2Task.Domain.Model.Maps
 
         private static void AddSrp(D3Produkty.ProduktyProdukt p, Product product)
         {
-            bool hasPrice = decimal.TryParse(p.CenaSugerowana, out decimal gross);
-            bool hasVat = decimal.TryParse(p.Vat, out decimal vat);
+            bool hasPrice = decimal.TryParse(p.CenaSugerowana, CultureInfo.InvariantCulture, out decimal gross);
+            bool hasVat = decimal.TryParse(p.Vat, CultureInfo.InvariantCulture, out decimal vat);
             if (hasPrice)
             {
                 if (hasVat)
                 {
-                    decimal net = Math.Round(gross * (100 - vat), 2);
-                    product.Srp = new(net, gross, vat);
+                    decimal net = Math.Round(gross * (1 - vat), 2);
+                    product.Srp = new(net, gross, vat * 100);
                 }
                 else
                     product.Srp = new(0, gross, 0);

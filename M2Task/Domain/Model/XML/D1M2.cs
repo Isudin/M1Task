@@ -26,6 +26,7 @@ public partial class D1M2Offer : IXmlModel
     private string extensionsField;
 
     /// <remarks/>
+    [XmlElement("products")]
     public OfferProducts Products
     {
         get
@@ -53,7 +54,7 @@ public partial class D1M2Offer : IXmlModel
     }
 
     /// <remarks/>
-    [XmlAttribute()]
+    [XmlAttribute("generated")]
     public string Generated
     {
         get
@@ -67,7 +68,7 @@ public partial class D1M2Offer : IXmlModel
     }
 
     /// <remarks/>
-    [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+    [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", AttributeName = "currency")]
     public string Currency
     {
         get
@@ -81,7 +82,7 @@ public partial class D1M2Offer : IXmlModel
     }
 
     /// <remarks/>
-    [XmlAttribute()]
+    [XmlAttribute("version")]
     public decimal Version
     {
         get
@@ -95,7 +96,7 @@ public partial class D1M2Offer : IXmlModel
     }
 
     /// <remarks/>
-    [XmlAttribute()]
+    [XmlAttribute("extensions")]
     public string Extensions
     {
         get
@@ -115,11 +116,12 @@ public partial class D1M2Offer : IXmlModel
     public partial class OfferProducts
     {
 
-        private OfferProductsProduct productField;
+        private OfferProductsProduct[] productField;
 
         private string languageField;
 
         /// <remarks/>
+        [XmlElement("product")]
         public OfferProductsProduct[] Products
         {
             get
@@ -133,7 +135,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("language")]
         public string Language
         {
             get
@@ -189,6 +191,7 @@ public partial class D1M2Offer : IXmlModel
         private byte siteField;
 
         /// <remarks/>
+        [XmlElement("producer")]
         public OfferProductsProductProducer Producer
         {
             get
@@ -202,6 +205,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("category")]
         public OfferProductsProductCategory Category
         {
             get
@@ -215,6 +219,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("unit")]
         public OfferProductsProductUnit Unit
         {
             get
@@ -228,6 +233,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("warranty")]
         public OfferProductsProductWarranty Warranty
         {
             get
@@ -241,6 +247,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("card")]
         public OfferProductsProductCard Card
         {
             get
@@ -254,6 +261,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("description")]
         public OfferProductsProductDescription Description
         {
             get
@@ -267,6 +275,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("price")]
         public OfferProductsProductPrice Price
         {
             get
@@ -280,6 +289,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("srp")]
         public OfferProductsProductSrp Srp
         {
             get
@@ -293,6 +303,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("images")]
         public OfferProductsProductImages Images
         {
             get
@@ -306,7 +317,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlElement(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlElement(Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", ElementName = "icons")]
         public Icons Icons
         {
             get
@@ -320,6 +331,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("sizes")]
         public OfferProductsProductSizes Sizes
         {
             get
@@ -347,6 +359,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("group")]
         public OfferProductsProductGroup Group
         {
             get
@@ -360,7 +373,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public ushort Id
         {
             get
@@ -374,7 +387,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("currency")]
         public string Currency
         {
             get
@@ -402,7 +415,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", AttributeName = "site")]
         public byte Site
         {
             get
@@ -428,7 +441,7 @@ public partial class D1M2Offer : IXmlModel
         private string nameField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public uint Id
         {
             get
@@ -442,7 +455,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("name")]
         public string Name
         {
             get
@@ -470,7 +483,7 @@ public partial class D1M2Offer : IXmlModel
         private string nameField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public uint Id
         {
             get
@@ -484,7 +497,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -498,7 +511,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("name")]
         public string Name
         {
             get
@@ -526,7 +539,7 @@ public partial class D1M2Offer : IXmlModel
         private string nameField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public byte Id
         {
             get
@@ -540,7 +553,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName ="lang")]
         public string Lang
         {
             get
@@ -554,7 +567,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("name")]
         public string Name
         {
             get
@@ -582,7 +595,7 @@ public partial class D1M2Offer : IXmlModel
         private byte periodField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("id")]
         public byte Id
         {
             get
@@ -596,7 +609,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", AttributeName = "type")]
         public string Type
         {
             get
@@ -610,7 +623,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", AttributeName = "period")]
         public byte Period
         {
             get
@@ -634,7 +647,7 @@ public partial class D1M2Offer : IXmlModel
         private string urlField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("url")]
         public string Url
         {
             get
@@ -678,6 +691,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
+        [XmlElement("version")]
         public OfferProductsProductDescriptionVersion Version
         {
             get
@@ -731,7 +745,7 @@ public partial class D1M2Offer : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -811,7 +825,7 @@ public partial class D1M2Offer : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -851,7 +865,7 @@ public partial class D1M2Offer : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -891,7 +905,7 @@ public partial class D1M2Offer : IXmlModel
         private string valueField;
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -933,7 +947,7 @@ public partial class D1M2Offer : IXmlModel
         private decimal vatField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("gross")]
         public decimal Gross
         {
             get
@@ -947,7 +961,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("net")]
         public decimal Net
         {
             get
@@ -961,7 +975,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("vat")]
         public decimal Vat
         {
             get
@@ -1039,7 +1053,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.iai-shop.com/developers/iof/extensions.phtml", AttributeName ="external")]
         public string External
         {
             get
@@ -1073,7 +1087,7 @@ public partial class D1M2Offer : IXmlModel
         private ushort heightField;
 
         /// <remarks/>
-        [XmlAttribute()]
+        [XmlAttribute("url")]
         public string Url
         {
             get
@@ -1280,9 +1294,10 @@ public partial class D1M2Offer : IXmlModel
     public partial class OfferProductsProductSizes
     {
 
-        private OfferProductsProductSizesSize sizeField;
+        private OfferProductsProductSizesSize[] sizeField;
 
         /// <remarks/>
+        [XmlElement("size")]
         public OfferProductsProductSizesSize[] Sizes
         {
             get
@@ -1579,7 +1594,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get
@@ -1651,7 +1666,7 @@ public partial class D1M2Offer : IXmlModel
         }
 
         /// <remarks/>
-        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/XML/1998/namespace", AttributeName = "lang")]
         public string Lang
         {
             get

@@ -2,7 +2,6 @@
 using M2Task.Domain.Model.Database;
 using M2Task.Domain.Model.XML;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
@@ -70,7 +69,14 @@ public partial class MainPageViewModel
         if (!serializer.CanDeserialize(reader)) return Task.FromResult<object?>(null);
 
         stream.Position = 0;
-        return Task.FromResult(serializer.Deserialize(stream));
+        try
+        {
+            return Task.FromResult(serializer.Deserialize(stream));
+        }
+        catch (Exception ex) 
+        {
+            return null;
+        }
     }
 
     private async Task<Product[]> MapDeserializedFile(object deserializedFile)

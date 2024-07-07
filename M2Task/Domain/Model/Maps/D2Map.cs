@@ -18,6 +18,7 @@ namespace M2Task.Domain.Model.Maps
                 product.Code = p.Sku;
                 product.Names.Add(new(p.Name));
                 product.Descriptions.Add(new(p.Desc));
+                product.Quantity = p.Qty;
                 AddSrp(p, product);
 
                 if (p.Photos != null)
