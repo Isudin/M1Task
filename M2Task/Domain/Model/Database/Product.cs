@@ -1,4 +1,7 @@
-﻿namespace M2Task.Domain.Model.Database
+﻿using M2Task.Presentation;
+using System.Reflection;
+
+namespace M2Task.Domain.Model.Database
 {
     public class Product
     {
@@ -38,7 +41,17 @@
         public List<LocalizedText> Names { get; set; } = [];
         public List<LocalizedText> Descriptions { get; set; } = [];
         public List<string> ImageUrls { get; set; } = [];
-        public string? Icon => ImageUrls?.FirstOrDefault();
+        public ImageSource Image
+        {
+            get
+            {
+                if (ImageUrls.Count == 0)
+                    return "no_image.png";
+                else
+                    return ImageSource.FromUri(new Uri(ImageUrls.FirstOrDefault()!));
+            }
+        }
+
         public Price? Srp { get; set; }
         public string GrossWithCurrency
         {

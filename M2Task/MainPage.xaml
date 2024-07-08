@@ -7,14 +7,14 @@
 
     <ScrollView BackgroundColor="#1E1E1E">
 
-        <VerticalStackLayout>
+        <VerticalStackLayout Padding="10">
             <Button Text="Load XML files" Command="{Binding SelectFilesCommand}"/>
             <CollectionView ItemsSource="{Binding Products}">
                 <CollectionView.Header>
-                    <Grid HorizontalOptions="FillAndExpand" Padding="10" x:DataType="model:Product">
+                    <Grid HorizontalOptions="FillAndExpand" x:DataType="model:Product" BackgroundColor="SlateBlue">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="400"/>
+                            <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
@@ -24,21 +24,33 @@
                             <RowDefinition Height="30"/>
                         </Grid.RowDefinitions>
 
-                        <Label Text="Obraz" Grid.Column="0" Grid.RowSpan="2"/>
-                        <Label Text="Nazwa" Grid.Column="1" Grid.Row="0"/>
-                        <Label Text="Opis" Grid.Column="1" Grid.Row="1"/>
-                        <Label Text="Sugerowana cena brutto" Grid.Column="2" Grid.RowSpan="2"/>
-                        <Label Text="Dostępna ilość" Grid.Column="3" Grid.RowSpan="2"/>
-                        <Label Text="Zapisz do bazy" Grid.Column="4" Grid.RowSpan="2"/>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="0" Grid.RowSpan="2" Padding="2">
+                            <Label Text="Obraz" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Border>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="0" Padding="2">
+                            <Label Text="Nazwa"/>
+                        </Border>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="1" Padding="2">
+                            <Label Text="Opis"/>
+                        </Border>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="2" Grid.RowSpan="2" Padding="2">
+                            <Label Text="SRP"/>
+                        </Border>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="3" Grid.RowSpan="2" Padding="2">
+                            <Label Text="Ilość"/>
+                        </Border>
+                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="4" Grid.RowSpan="2" Padding="2">
+                            <Label Text="Zapisz"/>
+                        </Border>
                     </Grid>
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Border Stroke="SlateGray" StrokeThickness="1" Margin="5">
-                            <Grid HorizontalOptions="FillAndExpand" Padding="10" x:DataType="model:Product">
+                            <Grid HorizontalOptions="FillAndExpand"  x:DataType="model:Product">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="150"/>
-                                    <ColumnDefinition Width="400"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="100"/>
@@ -47,12 +59,33 @@
                                     <RowDefinition Height="50"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Text="{Binding Icon}" Grid.Column="0" Grid.RowSpan="2"/>
-                                <Label Text="{Binding Name.Text}" Grid.Column="1" Grid.Row="0"/>
-                                <Label Text="{Binding Description.Text}" Grid.Column="1" Grid.Row="1"/>
-                                <Label Text="{Binding Srp.Gross}" Grid.Column="2" Grid.RowSpan="2"/>
-                                <Label Text="{Binding Quantity}" Grid.Column="3" Grid.RowSpan="2"/>
-                                <Label Text="{Binding IsUseful}" Grid.Column="4" Grid.RowSpan="2"/>
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="0" Grid.RowSpan="2">
+                                    <Image Source="{Binding Image}">
+                                        <!--<Image.Source>-->
+                                            <!--<UriImageSource Uri="{Binding Icon}" CacheValidity="10:00:00:00"/>
+                                        </Image.Source>-->
+                                    </Image>
+                                </Border>
+
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="0" Padding="2">
+                                    <Label Text="{Binding Name.Text}"/>
+                                </Border>
+
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="1" Padding="2">
+                                    <Label Text="{Binding Description.Text}"/>
+                                </Border>
+
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="2" Grid.RowSpan="2" Padding="2">
+                                    <Label Text="{Binding Srp.Gross}"/>
+                                </Border>
+
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="3" Grid.RowSpan="2" Padding="2">
+                                    <Label Text="{Binding Quantity}"/>
+                                </Border>
+
+                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="4" Grid.RowSpan="2">
+                                    <CheckBox IsChecked="{Binding IsUseful}"/>
+                                </Border>
                             </Grid>
                         </Border>
                     </DataTemplate>
