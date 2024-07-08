@@ -66,7 +66,7 @@ namespace M2Task.Domain.Model.Database
         public List<string> VariantsCodes { get; set; } = [];
         public decimal Quantity { get; set; }
         public string QuantityStr => Quantity > 0 ? "Brak danych" : Quantity.ToString();
-        public bool IsUseful { get; set; }
+        public bool SendToDatabase { get; set; }
 
         public record LocalizedText(string Text, string LanguageCode = "PL") { }
 

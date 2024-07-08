@@ -16,6 +16,7 @@ public partial class MainPageViewModel
     }
 
     public ICommand SelectFilesCommand => new Command(SelectFiles);
+    public ICommand SendWaresToDatabaseCommand => new Command(SendWaresToDatabase);
 
     private Type[] XmlModels { get; set; }
     public ObservableCollection<Product> Products { get; set; } = [];
@@ -27,6 +28,15 @@ public partial class MainPageViewModel
         if (!selectedFiles.Any()) return;
 
         Task.Run(async () => await ReadSelectedFiles(selectedFiles));
+    }
+
+    public void SendWaresToDatabase()
+    {
+        var selectedWares = Products.Count(x => x.SendToDatabase);
+        string message = $"Successfully sent {selectedWares} to database.*{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}" +
+            $"*No data has been sent. This application is just a proof of concept and is not supposed to send further any data.";
+
+        Application.Current!.MainPage!.DisplayAlert("Success", message, "OK").GetAwaiter().GetResult();
     }
 
     private async Task ReadSelectedFiles(IEnumerable<FileResult> files)

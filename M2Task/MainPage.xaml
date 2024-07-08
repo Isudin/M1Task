@@ -39,15 +39,15 @@
 
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="0" Grid.RowSpan="2">
-                            <Label Style="{StaticResource cellLabel}" Text="Obraz"/>
+                            <Label Style="{StaticResource cellLabel}" Text="Image"/>
                         </Border>
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="1" Grid.Row="0">
-                            <Label Style="{StaticResource cellLabel}"  Text="Nazwa"/>
+                            <Label Style="{StaticResource cellLabel}"  Text="Name"/>
                         </Border>
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="1" Grid.Row="1">
-                            <Label Style="{StaticResource cellLabel}"  Text="Opis"/>
+                            <Label Style="{StaticResource cellLabel}"  Text="Description"/>
                         </Border>
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="2" Grid.RowSpan="2">
@@ -55,11 +55,11 @@
                         </Border>
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="3" Grid.RowSpan="2">
-                            <Label Style="{StaticResource cellLabel}"  Text="Ilość"/>
+                            <Label Style="{StaticResource cellLabel}"  Text="Quantity"/>
                         </Border>
                         <Border Style="{StaticResource cellBorder}"
                                 Grid.Column="4" Grid.RowSpan="2">
-                            <Label Style="{StaticResource cellLabel}"  Text="Zapisz"/>
+                            <Label Style="{StaticResource cellLabel}"  Text="Save to database"/>
                         </Border>
                     </Grid>
                 </CollectionView.Header>
@@ -96,23 +96,24 @@
 
                                 <Border Style="{StaticResource cellBorder}"
                                         Grid.Column="2" Grid.RowSpan="2">
-                                    <Label Style="{StaticResource cellLabel}"  Text="{Binding Srp.Gross}"/>
+                                    <Label Style="{StaticResource cellLabel}" Text="{Binding Srp.Gross}"/>
                                 </Border>
 
                                 <Border Style="{StaticResource cellBorder}"
                                         Grid.Column="3" Grid.RowSpan="2">
-                                    <Label Style="{StaticResource cellLabel}"  Text="{Binding Quantity}"/>
+                                    <Label Style="{StaticResource cellLabel}" Text="{Binding Quantity}"/>
                                 </Border>
 
                                 <Border Style="{StaticResource cellBorder}"
                                         Grid.Column="4" Grid.RowSpan="2">
-                                    <CheckBox Style="{StaticResource cellLabel}"  IsChecked="{Binding IsUseful}"/>
+                                    <CheckBox Style="{StaticResource cellLabel}" IsChecked="{Binding SendToDatabase}"/>
                                 </Border>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="Send selected files to database" Command="{Binding SendWaresToDatabaseCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -8,7 +8,6 @@ namespace M2Task.Domain
     {
         public static Product[] MapToProducts(IXmlModel xml)
         {
-
             try
             {
                 //TODO: Automate mapping
