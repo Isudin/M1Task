@@ -5,8 +5,21 @@
              x:Class="M2Task.MainPage"
              x:DataType="presentation:MainPageViewModel">
 
-    <ScrollView BackgroundColor="#1E1E1E">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Border" x:Key="cellBorder">
+                <Setter Property="Stroke" Value="SlateGray"/>
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="Padding" Value="2"/>
+            </Style>
+            <Style TargetType="Label" x:Key="cellLabel">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
+    <ScrollView BackgroundColor="#1E1E1E">
         <VerticalStackLayout Padding="10">
             <Button Text="Load XML files" Command="{Binding SelectFilesCommand}"/>
             <CollectionView ItemsSource="{Binding Products}">
@@ -24,23 +37,29 @@
                             <RowDefinition Height="30"/>
                         </Grid.RowDefinitions>
 
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="0" Grid.RowSpan="2" Padding="2">
-                            <Label Text="Obraz" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="0" Grid.RowSpan="2">
+                            <Label Style="{StaticResource cellLabel}" Text="Obraz"/>
                         </Border>
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="0" Padding="2">
-                            <Label Text="Nazwa"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="1" Grid.Row="0">
+                            <Label Style="{StaticResource cellLabel}"  Text="Nazwa"/>
                         </Border>
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="1" Padding="2">
-                            <Label Text="Opis"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="1" Grid.Row="1">
+                            <Label Style="{StaticResource cellLabel}"  Text="Opis"/>
                         </Border>
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="2" Grid.RowSpan="2" Padding="2">
-                            <Label Text="SRP"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="2" Grid.RowSpan="2">
+                            <Label Style="{StaticResource cellLabel}"  Text="SRP"/>
                         </Border>
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="3" Grid.RowSpan="2" Padding="2">
-                            <Label Text="Ilość"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="3" Grid.RowSpan="2">
+                            <Label Style="{StaticResource cellLabel}"  Text="Ilość"/>
                         </Border>
-                        <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="4" Grid.RowSpan="2" Padding="2">
-                            <Label Text="Zapisz"/>
+                        <Border Style="{StaticResource cellBorder}"
+                                Grid.Column="4" Grid.RowSpan="2">
+                            <Label Style="{StaticResource cellLabel}"  Text="Zapisz"/>
                         </Border>
                     </Grid>
                 </CollectionView.Header>
@@ -59,32 +78,35 @@
                                     <RowDefinition Height="50"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="0" Grid.RowSpan="2">
-                                    <Image Source="{Binding Image}">
-                                        <!--<Image.Source>-->
-                                            <!--<UriImageSource Uri="{Binding Icon}" CacheValidity="10:00:00:00"/>
-                                        </Image.Source>-->
-                                    </Image>
+
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="0" Grid.RowSpan="2">
+                                    <Image Source="{Binding Image}"/>
                                 </Border>
 
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="0" Padding="2">
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="1" Grid.Row="0">
                                     <Label Text="{Binding Name.Text}"/>
                                 </Border>
 
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="1" Grid.Row="1" Padding="2">
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="1" Grid.Row="1">
                                     <Label Text="{Binding Description.Text}"/>
                                 </Border>
 
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="2" Grid.RowSpan="2" Padding="2">
-                                    <Label Text="{Binding Srp.Gross}"/>
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="2" Grid.RowSpan="2">
+                                    <Label Style="{StaticResource cellLabel}"  Text="{Binding Srp.Gross}"/>
                                 </Border>
 
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="3" Grid.RowSpan="2" Padding="2">
-                                    <Label Text="{Binding Quantity}"/>
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="3" Grid.RowSpan="2">
+                                    <Label Style="{StaticResource cellLabel}"  Text="{Binding Quantity}"/>
                                 </Border>
 
-                                <Border Stroke="SlateGray" StrokeThickness="1" Grid.Column="4" Grid.RowSpan="2">
-                                    <CheckBox IsChecked="{Binding IsUseful}"/>
+                                <Border Style="{StaticResource cellBorder}"
+                                        Grid.Column="4" Grid.RowSpan="2">
+                                    <CheckBox Style="{StaticResource cellLabel}"  IsChecked="{Binding IsUseful}"/>
                                 </Border>
                             </Grid>
                         </Border>
