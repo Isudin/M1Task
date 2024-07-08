@@ -113,7 +113,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Button Text="Send selected files to database" Command="{Binding SendWaresToDatabaseCommand}"/>
+            <Button Text="Send selected files to database"
+                    Clicked="OnSendWaresClicked"/>
+                    <!--Command="{Binding SendWaresToDatabaseCommand}"/>-->
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
